@@ -33,7 +33,7 @@ export default function Navbar() {
             <nav>
                 <div className='container flex justify-between items-center py-8'>
                     {/* Logo Section */}
-                    <div className='text-2xl flex items-center gap-2 font-bold uppercase'>
+                    <div className='md:text-2xl text-xl flex items-center gap-2 font-bold uppercase'>
                         <HiShoppingBag />
                         <p>Fashion</p>
                         <p className='text-secondary'>Wear</p>
@@ -51,7 +51,7 @@ export default function Navbar() {
                         </ul>
                     </div>
                     {/* Icons Section */}
-                    <div className='flex items-center gap-4'>
+                    <div className='flex items-center'>
                         <button className='text-2xl hover:bg-primary hover:text-white rounded-full p-2 duration-200'>
                             <CiSearch />
                         </button>
