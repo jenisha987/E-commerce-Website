@@ -4,6 +4,7 @@ import { HiShoppingBag } from "react-icons/hi2";
 import { CiSearch } from "react-icons/ci";
 import { PiShoppingCartThin } from "react-icons/pi";
 import { MdMenu } from "react-icons/md";
+import ResponsiveMenu from './ResponsiveMenu';
 
 export default function Navbar() {
 
@@ -69,6 +70,7 @@ export default function Navbar() {
                     </div>
                 </div>
             </nav>
+            <ResponsiveMenu open={open} />
         </>
     )
 }
