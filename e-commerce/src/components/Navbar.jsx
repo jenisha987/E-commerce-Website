@@ -9,6 +9,7 @@ import ResponsiveMenu from './ResponsiveMenu';
 export default function Navbar() {
 
     const [ open, setOpen ] = useState(false);
+    const [ activeLink, setActiveLink ] = useState("");
 
     const navlinks = [
         {
@@ -29,12 +30,16 @@ export default function Navbar() {
         },
     ]
 
+    const handleClick = (title) => {
+        setActiveLink(title);
+    }
+
     return (
         <>
             <nav>
                 <div className='container flex justify-between items-center py-8'>
                     {/* Logo Section */}
-                    <div className='md:text-2xl text-xl flex items-center gap-2 font-bold uppercase'>
+                    <div className='md:text-2xl text-xl flex items-center gap-2 font-bold uppercase mr-6'>
                         <HiShoppingBag />
                         <p>Fashion</p>
                         <p className='text-secondary'>Wear</p>
@@ -44,7 +49,7 @@ export default function Navbar() {
                         <ul className='flex items-center gap-6 text-gray-600'>
                             {
                                 navlinks.map(({ id, title }) => (
-                                    <li key={id} className='inline-block py-1 px-3 hover:text-primary font-semibold cursor-pointer capitalize'>
+                                    <li key={id} onClick={() => handleClick(title)} className={`inline-block py-1 px-3 hover:text-primary font-semibold cursor-pointer capitalize ${activeLink === title ? 'underline underline-offset-4 decoration-primary decoration-2' : ''}`}>
                                         {title}
                                     </li>
                                 ))
