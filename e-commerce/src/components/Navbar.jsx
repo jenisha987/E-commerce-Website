@@ -58,12 +58,13 @@ export default function Navbar() {
                     </div>
                     {/* Icons Section */}
                     <div className='flex items-center'>
-                        <button className='text-2xl hover:bg-primary hover:text-white rounded-full p-2 duration-200'>
+                        <div className='text-2xl hover:bg-primary hover:text-white rounded-full p-2 duration-200'>
                             <CiSearch />
-                        </button>
-                        <button className='text-2xl hover:bg-primary hover:text-white rounded-full p-2 duration-200'>
+                        </div>
+                        <div className='text-2xl hover:bg-primary hover:text-white rounded-full p-6 duration-200'>
                             <PiShoppingCartThin />
-                        </button>
+                            <div className='absolute min-w-2.5 min-h-2.5 rounded-full bg-red-600 -mt-8 ml-5'></div>
+                        </div>
                         <button className='hover:bg-primary text-primary font-semibold hover:text-white
                         rounded-md border-2 border-primary px-6 py-2 duration-200 hidden md:block'>
                             Login
@@ -71,7 +72,7 @@ export default function Navbar() {
                     </div>
                     {/* Mobile Hamburger Menu Section */}
                     <div className='md:hidden' onClick={() => setOpen(!open)}>
-                        <MdMenu className='text-4xl' />
+                        <MdMenu className='text-4xl cursor-pointer' />
                     </div>
                 </div>
             </nav>
