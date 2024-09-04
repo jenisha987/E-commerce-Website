@@ -61,7 +61,7 @@ export default function Navbar() {
                         <div className='text-2xl hover:bg-primary hover:text-white rounded-full p-2 duration-200'>
                             <CiSearch />
                         </div>
-                        <div className='text-2xl hover:bg-primary hover:text-white rounded-full p-4 duration-200'>
+                        <div className='text-2xl hover:bg-primary hover:text-white rounded-full p-2 md:p-6 duration-200'>
                             <PiShoppingCartThin />
                             <div className='absolute min-w-2.5 min-h-2.5 rounded-full bg-primary -mt-8 ml-5'></div>
                         </div>
