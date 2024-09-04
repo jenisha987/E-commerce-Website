@@ -5,30 +5,12 @@ import { CiSearch } from "react-icons/ci";
 import { PiShoppingCartThin } from "react-icons/pi";
 import { MdMenu } from "react-icons/md";
 import ResponsiveMenu from './ResponsiveMenu';
+import { navlinks } from "../assets/assets";
 
 export default function Navbar() {
 
     const [ open, setOpen ] = useState(false);
     const [ activeLink, setActiveLink ] = useState("");
-
-    const navlinks = [
-        {
-            id: 1,
-            title: "home"
-        },
-        {
-            id: 2,
-            title: "menu"
-        },
-        {
-            id: 3,
-            title: "MobileApp"
-        },
-        {
-            id: 4,
-            title: "contactUs"
-        },
-    ]
 
     const handleClick = (title) => {
         setActiveLink(title);
@@ -57,11 +39,11 @@ export default function Navbar() {
                         </ul>
                     </div>
                     {/* Icons Section */}
-                    <div className='flex items-center'>
-                        <div className='text-2xl hover:bg-primary hover:text-white rounded-full p-2 duration-200'>
+                    <div className='flex items-center cursor-pointer'>
+                        <div className='text-2xl'>
                             <CiSearch />
                         </div>
-                        <div className='text-2xl hover:bg-primary hover:text-white rounded-full p-2 md:p-6 duration-200'>
+                        <div className='text-2xl p-4'>
                             <PiShoppingCartThin />
                             <div className='absolute min-w-2.5 min-h-2.5 rounded-full bg-primary -mt-8 ml-5'></div>
                         </div>
