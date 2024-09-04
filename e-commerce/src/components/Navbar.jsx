@@ -63,7 +63,7 @@ export default function Navbar() {
                         </div>
                         <div className='text-2xl hover:bg-primary hover:text-white rounded-full p-6 duration-200'>
                             <PiShoppingCartThin />
-                            <div className='absolute min-w-2.5 min-h-2.5 rounded-full bg-red-600 -mt-8 ml-5'></div>
+                            <div className='absolute min-w-2.5 min-h-2.5 rounded-full bg-primary -mt-8 ml-5'></div>
                         </div>
                         <button className='hover:bg-primary text-primary font-semibold hover:text-white
                         rounded-md border-2 border-primary px-6 py-2 duration-200 hidden md:block'>
