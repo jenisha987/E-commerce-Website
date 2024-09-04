@@ -46,7 +46,7 @@ export default function Navbar() {
                     </div>
                     {/* Menu Section */}
                     <div className='hidden md:block'>
-                        <ul className='flex items-center gap-6 text-gray-600'>
+                        <ul className='flex items-center gap-4 text-gray-600'>
                             {
                                 navlinks.map(({ id, title }) => (
                                     <li key={id} onClick={() => handleClick(title)} className={`inline-block py-1 px-3 hover:text-primary font-semibold cursor-pointer capitalize ${activeLink === title ? 'underline underline-offset-4 decoration-primary decoration-2' : ''}`}>
