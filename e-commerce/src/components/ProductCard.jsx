@@ -18,7 +18,7 @@ export default function ProductCard({ id, title, price, desc, img, rating }) {
                 <span className="flex items-center">
                     <IoStar className="mr-1 text-yellow-400" /> {rating}
                 </span>
-                <button className="p-1 md:p-2 text-white bg-primary hover:bg-orange-700 rounded-lg text-xs">
+                <button className="p-2 text-white bg-primary hover:bg-orange-700 rounded-lg text-xs">
                     Add to Cart
                 </button>
             </div>
