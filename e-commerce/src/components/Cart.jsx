@@ -28,7 +28,7 @@ export default function Cart({ activeCart, setActiveCart }) {
                                 qty={item.qty}
                             />
                         )
-                    }) : <h2 className="text-center text-xl font-semibold text-gray-800">Your cart is empty</h2>
+                    }) : <h2 className="text-center mt-6 text-xl font-semibold text-gray-800">Your cart is empty</h2>
                 }
                 
                 <div className="absolute bottom-0">
