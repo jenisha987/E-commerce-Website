@@ -47,7 +47,7 @@ export default function Navbar({ activeCart, setActiveCart }) {
                             <CiSearch />
                         </div>
                         <div className='text-2xl p-4'>
-                            <PiShoppingCartThin onClick={() => setActiveCart(!activeCart)} />
+                            <PiShoppingCartThin onClick={() => setActiveCart(!activeCart)} className={`${cartCount > 0 && 'animate-bounce delay-500 transition-all'}`} />
                             <div className='absolute flex w-5 h-5 justify-center items-center text-sm rounded-full bg-primary -mt-10 ml-3'>
                                 { cartCount }
                             </div>

@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 export default function Cart({ activeCart, setActiveCart }) {
 
     const cartItems = useSelector(state => state.cart.cart);
+    const totalQty = cartItems.reduce((totalQty, item) => totalQty + item.qty, 0)
+    const totalPrice = cartItems.reduce((totalPrice, item) => totalPrice + item.qty * item.price, 0)
 
     return (
         <>
@@ -32,8 +34,8 @@ export default function Cart({ activeCart, setActiveCart }) {
                 }
                 
                 <div className="absolute bottom-0">
-                    <h3 className="font-semibold text-gray-800">Items : 1</h3>
-                    <h3 className="font-semibold text-gray-800">Total Amount: Rs.100</h3>
+                    <h3 className="font-semibold text-gray-800">Items : {totalQty}</h3>
+                    <h3 className="font-semibold text-gray-800">Total Amount: Rs.{totalPrice}</h3>
                     <hr className="my-2" />
                     <button className="bg-primary md:w-[28vw] w-[86vw] lg:w-[16vw] font-bold px-20 text-white py-2 rounded-lg mb-8">Checkout</button>
                 </div>
