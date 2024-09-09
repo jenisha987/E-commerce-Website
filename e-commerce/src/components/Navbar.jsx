@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { HiShoppingBag } from "react-icons/hi2";
 import { CiSearch } from "react-icons/ci";
 import { PiShoppingCartThin } from "react-icons/pi";
@@ -10,6 +11,9 @@ export default function Navbar({ activeCart, setActiveCart }) {
 
     const [ open, setOpen ] = useState(false);
     const [ activeLink, setActiveLink ] = useState("");
+
+    const cartItems = useSelector(state => state.cart.cart);
+    const cartCount = cartItems.reduce((total, item) => total + item.qty, 0);
 
     const handleClick = (title) => {
         setActiveLink(title);
@@ -44,7 +48,9 @@ export default function Navbar({ activeCart, setActiveCart }) {
                         </div>
                         <div className='text-2xl p-4'>
                             <PiShoppingCartThin onClick={() => setActiveCart(!activeCart)} />
-                            <div className='absolute flex w-5 h-5 justify-center items-center text-sm rounded-full bg-primary -mt-10 ml-3'>0</div>
+                            <div className='absolute flex w-5 h-5 justify-center items-center text-sm rounded-full bg-primary -mt-10 ml-3'>
+                                {cartCount}
+                            </div>
                         </div>
                         <button className='hover:bg-primary text-primary font-semibold hover:text-white
                         rounded-md border-2 border-primary px-6 py-2 duration-200 hidden md:block'>
