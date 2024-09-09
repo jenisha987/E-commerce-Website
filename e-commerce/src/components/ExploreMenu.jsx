@@ -3,19 +3,10 @@ import { menu_list } from "../assets/assets";
 
 export default function ExploreMenu() {
     return (
-        <div className="flex flex-col gap-5" id="explore-menu">
-            <h1 className="md:text-4xl text-2xl font-bold">Explore Our Latest Products</h1>
-            <div className="grid md:grid-cols-4 grid-cols-2 mx-auto gap-6 text-center">
-                {
-                    menu_list.map(({ id, menu_image, menu_name }) => {
-                        return (
-                            <div key={id}>
-                                <img src={menu_image} alt="menu" className="h-60" />
-                                <p>{menu_name}</p>
-                            </div>
-                        )
-                    })
-                }
+        <div>
+            <h3>Explore Our Products</h3>
+            <div>
+                <button className="px-3 py-2 bg-gray-200 font-bold rounded-lg hover:bg-green-500 hover:text-white">All</button>
             </div>
         </div>
     )
