@@ -1,10 +1,15 @@
 import React from "react";
 import ProductCard from "./ProductCard";
+import { products } from "../assets/products";
 
 export default function ProductList() {
     return (
         <div>
-            <ProductCard />
+            {
+                products.map((product) => {
+                    return <ProductCard key={product.id} />
+                })
+            }
         </div>
     )
 }
