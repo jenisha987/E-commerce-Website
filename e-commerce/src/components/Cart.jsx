@@ -17,16 +17,18 @@ export default function Cart({ activeCart, setActiveCart }) {
                 </div>
 
                 {
-                    cartItems.map((item) => {
-                        return <CartItem 
-                            key={item.id} 
-                            id={item.id} 
-                            name={item.title} 
-                            price={item.price}
-                            img={item.img}
-                            qty={item.qty}
-                        />
-                    })
+                    cartItems.length > 0 ?cartItems.map((item) => {
+                        return (
+                            <CartItem 
+                                key={item.id} 
+                                id={item.id} 
+                                name={item.title} 
+                                price={item.price}
+                                img={item.img}
+                                qty={item.qty}
+                            />
+                        )
+                    }) : <h2 className="text-center text-xl font-semibold text-gray-800">Your cart is empty</h2>
                 }
                 
                 <div className="absolute bottom-0">
