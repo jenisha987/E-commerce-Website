@@ -23,6 +23,29 @@ export const navlinks = [
     },
 ]
 
+export const category = [
+    {
+        id: 1,
+        category: "All"
+    },
+    {
+        id: 2,
+        category: "Mens"
+    },
+    {
+        id: 3,
+        category: "Womens"
+    },
+    {
+        id: 4,
+        category: "Kids"
+    },
+    {
+        id: 5,
+        category: "Accessories"
+    },
+]
+
 export const menu_list = [
     {
         id: 1,
