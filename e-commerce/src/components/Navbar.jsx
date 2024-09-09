@@ -49,7 +49,7 @@ export default function Navbar({ activeCart, setActiveCart }) {
                         <div className='text-2xl p-4'>
                             <PiShoppingCartThin onClick={() => setActiveCart(!activeCart)} />
                             <div className='absolute flex w-5 h-5 justify-center items-center text-sm rounded-full bg-primary -mt-10 ml-3'>
-                                {cartCount}
+                                { cartCount }
                             </div>
                         </div>
                         <button className='hover:bg-primary text-primary font-semibold hover:text-white
