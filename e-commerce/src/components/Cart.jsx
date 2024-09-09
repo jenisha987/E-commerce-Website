@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 import CartItem from "./CartItem";
-import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from "../redux/slices/CartSlice";
+import { useSelector } from "react-redux";
 
 export default function Cart({ activeCart, setActiveCart }) {
 
     const cartItems = useSelector(state => state.cart.cart);
-    const dispatch = useDispatch();
 
     return (
         <>
