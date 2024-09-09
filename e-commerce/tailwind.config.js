@@ -9,6 +9,7 @@ export default {
       colors: {
         primary: "#ff8901",
         secondary: "#fb923c",
+        navcolor: "#F4F4F4",
       },
       container: {
         center: true,

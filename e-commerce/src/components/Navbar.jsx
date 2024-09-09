@@ -18,8 +18,8 @@ export default function Navbar() {
 
     return (
         <>
-            <nav>
-                <div className='container flex justify-between items-center pt-4'>
+            <nav className="fixed top-0 left-0 right-0 bg-navcolor">
+                <div className='container flex justify-between items-center py-4'>
                     {/* Logo Section */}
                     <div className='md:text-2xl text-xl flex items-center gap-2 font-bold uppercase mr-6'>
                         <HiShoppingBag />

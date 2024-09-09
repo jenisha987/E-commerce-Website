@@ -3,7 +3,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
-import Cart from "./pages/Cart";
+import Cart from "./components/Cart";
 import PlaceOrder from "./pages/PlaceOrder";
 
 
