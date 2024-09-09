@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 import CartItem from "./CartItem";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../redux/slices/CartSlice";
 
-export default function Cart() {
+export default function Cart({ activeCart, setActiveCart }) {
+
+    // const [ activeCart, setActiveCart ] = useState(true)
+
+    const cartItems = useSelector(state => state.cart.cart);
+    const dispatch = useDispatch();
+
     return (
         <>
-            <div className="fixed right-0 top-0 w-full md:w-[32vw] lg:w-[18vw] h-full p-5 bg-white">
+            <div className={`fixed right-0 top-0 w-full md:w-[32vw] lg:w-[18vw] h-full p-5 bg-white
+                ${activeCart ? "translate-x-0" : "translate-x-full"} transition-all duration-500 z-50`}>
                 <div className="flex justify-between items-center my-3">
                     <span className="text-xl font-semibold text-gray-800">My Order</span>
-                    <IoMdCloseCircle size={25} className="hover:text-red-600 cursor-pointer" />
+                    <IoMdCloseCircle onClick={() => setActiveCart(!activeCart)}  size={25} className="hover:text-red-600 cursor-pointer" />
                 </div>
 
                 <CartItem />

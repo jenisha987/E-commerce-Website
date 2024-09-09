@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoStar } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/slices/CartSlice";
 
 export default function ProductCard({ id, title, price, desc, img, rating }) {
+
+    const dispatch = useDispatch();
+
+    // const [] = useState("");
+
     return (
         <div className="font-bold w-full max-w-xs bg-white p-4 flex flex-col rounded-lg gap-3 shadow-md">
             <img
@@ -18,7 +25,9 @@ export default function ProductCard({ id, title, price, desc, img, rating }) {
                 <span className="flex items-center">
                     <IoStar className="mr-1 text-yellow-400" /> {rating}
                 </span>
-                <button className="p-2 text-white bg-primary hover:bg-orange-700 rounded-lg text-xs">
+                <button onClick={() => {
+                    dispatch(addToCart({ id, title, price, qty: 1 }))
+                }} className="p-2 text-white bg-primary hover:bg-orange-700 rounded-lg text-xs">
                     Add to Cart
                 </button>
             </div>

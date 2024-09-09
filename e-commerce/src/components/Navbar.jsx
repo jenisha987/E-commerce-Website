@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from "../assets/images/fashion.png";
 import { HiShoppingBag } from "react-icons/hi2";
 import { CiSearch } from "react-icons/ci";
 import { PiShoppingCartThin } from "react-icons/pi";
@@ -7,7 +6,7 @@ import { MdMenu } from "react-icons/md";
 import ResponsiveMenu from './ResponsiveMenu';
 import { navlinks } from "../assets/assets";
 
-export default function Navbar() {
+export default function Navbar({ activeCart, setActiveCart }) {
 
     const [ open, setOpen ] = useState(false);
     const [ activeLink, setActiveLink ] = useState("");
@@ -44,8 +43,8 @@ export default function Navbar() {
                             <CiSearch />
                         </div>
                         <div className='text-2xl p-4'>
-                            <PiShoppingCartThin />
-                            <div className='absolute min-w-2.5 min-h-2.5 rounded-full bg-primary -mt-8 ml-5'></div>
+                            <PiShoppingCartThin onClick={() => setActiveCart(!activeCart)} />
+                            <div className='absolute flex w-5 h-5 justify-center items-center text-sm rounded-full bg-primary -mt-10 ml-3'>0</div>
                         </div>
                         <button className='hover:bg-primary text-primary font-semibold hover:text-white
                         rounded-md border-2 border-primary px-6 py-2 duration-200 hidden md:block'>
