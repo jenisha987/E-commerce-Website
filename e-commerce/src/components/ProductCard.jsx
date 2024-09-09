@@ -26,7 +26,7 @@ export default function ProductCard({ id, title, price, desc, img, rating }) {
                     <IoStar className="mr-1 text-yellow-400" /> {rating}
                 </span>
                 <button onClick={() => {
-                    dispatch(addToCart({ id, title, price, qty: 1 }))
+                    dispatch(addToCart({ id, title, price, img, qty: 1 }))
                 }} className="p-2 text-white bg-primary hover:bg-orange-700 rounded-lg text-xs">
                     Add to Cart
                 </button>

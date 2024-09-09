@@ -6,8 +6,6 @@ import { removeFromCart } from "../redux/slices/CartSlice";
 
 export default function Cart({ activeCart, setActiveCart }) {
 
-    // const [ activeCart, setActiveCart ] = useState(true)
-
     const cartItems = useSelector(state => state.cart.cart);
     const dispatch = useDispatch();
 
@@ -20,10 +18,19 @@ export default function Cart({ activeCart, setActiveCart }) {
                     <IoMdCloseCircle onClick={() => setActiveCart(!activeCart)}  size={25} className="hover:text-red-600 cursor-pointer" />
                 </div>
 
-                <CartItem />
-                <CartItem />
-                <CartItem />
-
+                {
+                    cartItems.map((item) => {
+                        return <CartItem 
+                            key={item.id} 
+                            id={item.id} 
+                            name={item.title} 
+                            price={item.price}
+                            img={item.img}
+                            qty={item.qty}
+                        />
+                    })
+                }
+                
                 <div className="absolute bottom-0">
                     <h3 className="font-semibold text-gray-800">Items : 1</h3>
                     <h3 className="font-semibold text-gray-800">Total Amount: Rs.100</h3>

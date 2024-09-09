@@ -5,7 +5,7 @@ import Cart from "./Cart";
 
 export default function Layout() {
 
-    const [ activeCart, setActiveCart ] = useState(true);
+    const [ activeCart, setActiveCart ] = useState(false);
 
     return (
         <div>
