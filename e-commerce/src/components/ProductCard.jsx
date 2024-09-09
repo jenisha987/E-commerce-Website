@@ -13,7 +13,7 @@ export default function ProductCard({ id, title, price, desc, img, rating }) {
                 <h2 className="truncate w-2/3">{title}</h2>
                 <span className="text-primary">Rs.{price}</span>
             </div>
-            <p className="text-xs text-gray-600">{desc.slice(0, 50)}...</p>
+            <p className="text-xs font-normal text-gray-600">{desc.slice(0, 50)}...</p>
             <div className="flex justify-between items-center">
                 <span className="flex items-center">
                     <IoStar className="mr-1 text-yellow-400" /> {rating}
