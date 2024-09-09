@@ -17,7 +17,7 @@ export default function Cart() {
 
                 <div className="absolute bottom-0">
                     <h3 className="font-semibold text-gray-800">Items : 1</h3>
-                    <h3 className="font-semibold text-gray-800">Total Amount: $100</h3>
+                    <h3 className="font-semibold text-gray-800">Total Amount: Rs.100</h3>
                     <hr className="my-2" />
                     <button className="bg-primary md:w-[28vw] w-[86vw] lg:w-[16vw] font-bold px-20 text-white py-2 rounded-lg mb-8">Checkout</button>
                 </div>
