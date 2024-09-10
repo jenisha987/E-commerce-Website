@@ -8,6 +8,7 @@ export default function ProductList() {
 
     const handleToast = (title) => toast.success(`Added ${title}`);
     const category = useSelector((state) => state.category.category);
+    const search = useSelector((state) => state.search.search)
 
     return (
         <>
@@ -19,9 +20,10 @@ export default function ProductList() {
                 {
                     products.filter((product) => {
                         if (category === "All") {
-                            return product;
+                            return product.title.toLowerCase().includes(search.toLowerCase());
                         } else {
-                            return category === product.category.name;
+                            return( category === product.category.name &&
+                            product.title.toLowerCase().includes(search.toLowerCase()));
                         }
                     }).map((product) => (
                         <ProductCard

@@ -6,11 +6,14 @@ import { PiShoppingCartThin } from "react-icons/pi";
 import { MdMenu } from "react-icons/md";
 import ResponsiveMenu from './ResponsiveMenu';
 import { navlinks } from "../assets/assets";
+import { useDispatch } from 'react-redux';
+import { setSearch } from '../redux/slices/SearchSlice';
 
 export default function Navbar({ activeCart, setActiveCart }) {
 
     const [ open, setOpen ] = useState(false);
     const [ activeLink, setActiveLink ] = useState("");
+    const [ searchOpen, setSearchOpen ] = useState(false);
 
     const cartItems = useSelector(state => state.cart.cart);
     const cartCount = cartItems.reduce((total, item) => total + item.qty, 0);
@@ -18,6 +21,12 @@ export default function Navbar({ activeCart, setActiveCart }) {
     const handleClick = (title) => {
         setActiveLink(title);
     }
+
+    const handleSearchToogle = () => {
+        setSearchOpen(!searchOpen);
+    }
+
+    const dispatch = useDispatch();
 
     return (
         <>
@@ -43,9 +52,22 @@ export default function Navbar({ activeCart, setActiveCart }) {
                     </div>
                     {/* Icons Section */}
                     <div className='flex items-center cursor-pointer'>
-                        <div className='text-2xl'>
+                        <div className='text-2xl' onClick={handleSearchToogle}>
                             <CiSearch />
                         </div>
+                        {
+                            searchOpen && (
+                                <input
+                                    type="search"
+                                    name="search"
+                                    id=""
+                                    placeholder="Search..."
+                                    autoComplete='off'
+                                    onChange={(e) => dispatch(setSearch(e.target.value))}
+                                    className="absolute bg-navcolor top-14 left-0 w-full md:w-auto md:left-auto  md:right-52 lg:right-6 border p-2 rounded-md shadow-md transition-all duration-300"
+                                />
+                            )
+                        }
                         <div className='text-2xl p-4'>
                             <PiShoppingCartThin onClick={() => setActiveCart(!activeCart)} className={`${cartCount > 0 && 'animate-bounce delay-500 transition-all'}`} />
                             <div className='absolute flex w-5 h-5 justify-center items-center text-sm rounded-full bg-primary -mt-10 ml-3'>
