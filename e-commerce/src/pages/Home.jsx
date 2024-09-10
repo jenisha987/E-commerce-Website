@@ -5,7 +5,7 @@ import ProductList from "../components/ProductList";
 
 export default function Home() {
     return (
-        <div className="container">
+        <div name="home" className="container">
             <Header />
             <ProductCategory />
             <ProductList />

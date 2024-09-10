@@ -1,9 +1,3 @@
-import t_shirt from "./images/t_shirt.jpg";
-
-export const assets = {
-    t_shirt,
-}
-
 export const navlinks = [
     {
         id: 1,

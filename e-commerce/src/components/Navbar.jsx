@@ -9,6 +9,7 @@ import ResponsiveMenu from './ResponsiveMenu';
 import { navlinks } from "../assets/assets";
 import { useDispatch } from 'react-redux';
 import { setSearch } from '../redux/slices/SearchSlice';
+import { Link } from "react-scroll";
 
 export default function Navbar({ activeCart, setActiveCart }) {
 
@@ -46,7 +47,7 @@ export default function Navbar({ activeCart, setActiveCart }) {
                             {
                                 navlinks.map(({ id, title }) => (
                                     <li key={id} onClick={() => handleClick(title)} className={`inline-block py-1 px-3 hover:text-primary font-semibold cursor-pointer capitalize ${activeLink === title ? 'underline underline-offset-4 decoration-primary decoration-2' : ''}`}>
-                                        {title}
+                                        <Link to={title} smooth duration={500}>{title}</Link>
                                     </li>
                                 ))
                             }
