@@ -2,12 +2,20 @@ import React, { useState } from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 import CartItem from "./CartItem";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart({ activeCart, setActiveCart }) {
 
     const cartItems = useSelector(state => state.cart.cart);
     const totalQty = cartItems.reduce((totalQty, item) => totalQty + item.qty, 0)
     const totalPrice = cartItems.reduce((totalPrice, item) => totalPrice + item.qty * item.price, 0)
+
+    const navigate = useNavigate();
+    
+    const handleCheckout = () => {
+        setActiveCart(false); // Hide the cart
+        navigate("/success"); // Navigate to the checkout page
+      };
 
     return (
         <>
@@ -37,7 +45,12 @@ export default function Cart({ activeCart, setActiveCart }) {
                     <h3 className="font-semibold text-gray-800">Items : {totalQty}</h3>
                     <h3 className="font-semibold text-gray-800">Total Amount: Rs.{totalPrice}</h3>
                     <hr className="my-2" />
-                    <button className="bg-primary md:w-[28vw] w-[86vw] lg:w-[16vw] font-bold px-20 text-white py-2 rounded-lg mb-8">Checkout</button>
+                    <button 
+                    onClick={handleCheckout}
+                    className="bg-primary md:w-[28vw] w-[86vw] lg:w-[16vw] font-bold px-20 text-white py-2 rounded-lg mb-8"
+                    >
+                        Checkout
+                    </button>
                 </div>
             </div>
 

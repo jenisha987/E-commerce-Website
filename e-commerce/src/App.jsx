@@ -3,15 +3,15 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
-import Cart from "./components/Cart";
-import PlaceOrder from "./pages/PlaceOrder";
+import Success from "./pages/Success";
+import Error from "./pages/Error";
 
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Layout />} >
         <Route index element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/order" element={<PlaceOrder />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/*" element={<Error />} />
     </Route>
 ))
 
