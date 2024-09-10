@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { HiShoppingBag } from "react-icons/hi2";
 import { CiSearch } from "react-icons/ci";
@@ -27,13 +28,14 @@ export default function Navbar({ activeCart, setActiveCart }) {
     }
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     return (
         <>
             <nav className="fixed top-0 left-0 right-0 bg-navcolor">
                 <div className='container flex justify-between items-center py-4'>
                     {/* Logo Section */}
-                    <div className='md:text-2xl text-xl flex items-center gap-2 font-bold uppercase mr-6'>
+                    <div onClick={() => navigate("/")} className='md:text-2xl text-xl flex items-center cursor-pointer gap-2 font-bold uppercase mr-6'>
                         <HiShoppingBag />
                         <p>Fashion</p>
                         <p className='text-secondary'>Wear</p>

@@ -22,7 +22,7 @@ export default function ProductCategory() {
     const selectedCategory = useSelector((state) => state.category.category);
 
     return (
-        <div>
+        <div className="lg:mt-28 md:-mt-20 -mt-20">
             <h3 className="text-3xl font-semibold">Explore Our Products</h3>
             <div className="my-5 flex gap-3 overflow-x-scroll scroll-smooth lg:overflow-x-hidden md:overflow-x-hidden ">
                 <button 
