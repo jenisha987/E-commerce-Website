@@ -3,7 +3,7 @@ import { IoStar } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/slices/CartSlice";
 
-export default function ProductCard({ id, title, price, desc, img, rating }) {
+export default function ProductCard({ id, title, price, desc, img, rating, handleToast }) {
 
     const dispatch = useDispatch();
 
@@ -27,6 +27,7 @@ export default function ProductCard({ id, title, price, desc, img, rating }) {
                 </span>
                 <button onClick={() => {
                     dispatch(addToCart({ id, title, price, img, qty: 1 }))
+                    handleToast(title);
                 }} className="p-2 text-white bg-primary hover:bg-orange-700 rounded-lg text-xs">
                     Add to Cart
                 </button>
